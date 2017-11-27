@@ -53,9 +53,10 @@ html, body{
   min-height: 100%;
 		}
 body {
+		display: inline-block;
+		min-height:100%;
+		width: 100%;
 		background-image: url("../images/brickwall/brickwall_@2X.png");
-		height: 1100px;
-		width: 1160px;
 		font-family: ‘Lucida Grande’, ‘Lucida Sans Unicode’, Lucida, Verdana, Helvetica, Arial, sans-serif;
 		color: #7b636c;
 	}
@@ -115,7 +116,7 @@ header{
 			}		
 
 		 }
-.cleafix {
+.clearfix {
 	clear: both;
 }
 main {
@@ -124,14 +125,17 @@ main {
 	margin-top: 75px;
 	margin-left: 100px;
 	margin-right: 100px;
+	margin-bottom: 10px
 	width: 980px;
 	padding-top: 25px;
     filter: alpha(opacity=.50); /* For IE8 and earlier */
 		}
 	main .about {
 			background-color: #fff;
-			height: 270px;
+			height: auto;
 		    width: 591px;
+		    margin-right: 25px;
+		    margin-bottom: 10px;
 		    padding: 15px;
 		    float:left;
 			}
@@ -146,7 +150,7 @@ main {
 				position: relative;
 			    text-align: justify;
 			    text-justify: inter-word;
-			    width: 361px;
+			    width: 340px;
 				}
 		main .icons {
 			height: 180px;
@@ -156,6 +160,7 @@ main {
 			padding-top: 25px;
 			padding-right: 10px;
 			padding-left: 10px;
+			padding-bottom: 20px;
 			text-align: center;
 		}
 		main div a img {
@@ -165,7 +170,9 @@ main {
 
 main .portfolio {
 			background-color: #fff;
-			height: 765px;
+			height: auto;
+			margin-right: 25px;
+			margin-bottom: 10px;
 		    width: 591px;
 		    padding: 22px;
 		    float: left;
@@ -177,27 +184,18 @@ main .portfolio h1 {
 			height: 10px;
 			border-bottom: solid 2px #7b636c;
 		}
-		 .portimages-left {
-		 	margin: 20px;
+		    .portimages-left /*img*/, .portimages-right /*img*/ {
+		    width: 250px;
+		    height: 186px;
 		 	margin-top:20px;
 		 	position: relative;
-		 	float: left;
-		    text-align: center;
-		    }
-		    .portimages-left img, .portimages-right img {
-		    width: 250px;
-		    height: 186px;
-		    /*background-color: #7b636c;*/
+		 	text-align: center;
 			}
+			.portimages-left {
+		 	float: left;
+		    }
 			.portimages-right {
-			margin: 20px;
-		    margin-top:20px;
-		 	position: relative;
 		 	float: right;
-		    text-align: center;
-		    width: 250px;
-		    height: 186px;
-		    /*background-color: #7b636c;*/
 			}
 		.label {
 			position: absolute;
@@ -205,14 +203,16 @@ main .portfolio h1 {
 			top: 80%;
     		left: 50%;
     		height: 40px;
-    		width: 100%;
+    		width: 200px;
 		    transform: translate(-50%, -50%);
 		    background-color: #7b636c;
 		    color: white;
 			}
 	main .contact {
 			background-color: #fff;
-			height: 265px;
+			height: auto;
+			margin-right: 25px;
+			margin-bottom: 10px;
 		    width: 591px;
 		    padding: 10px;
 		    float:left;
@@ -249,13 +249,41 @@ input #submit [type=submit]:hover {
 	height: : 100px;
 	width:  100%;
 	font-family: ‘Lucida Grande’, ‘Lucida Sans Unicode’, Lucida, Verdana, Helvetica, Arial, sans-serif;
+	margin-top: 10px;
 	color: white;
-	right: 0;
+	/*right: 0;*/
   	bottom: 0;
-  	left: 0;
+/*  	left: 0;*/
 	background-color: #e4d6d6;
 	border-top: 5px solid;
 	border-color: #581414;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	position: absolute;
 	padding: 1rem;
 	text-align: center;
+}
+
+@media  (max-width: 1113px) {
+	main .icons {
+		float: left;
+	}
+
+}
+@media   (max-width: 768px) {
+	 .portimages-left /*img*/, .portimages-right /*img*/ {
+	 	float: none;
+	 }
+}
+@media (max-width: 694px) {
+	main .about, main .contact {
+		float: none;
+	}
+	main {
+		margin-left: 25px;
+		margin-right: 25px;
+		height: auto;
+	}
+
+}
